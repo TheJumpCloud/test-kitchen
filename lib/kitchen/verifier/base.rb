@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -19,13 +18,14 @@
 require_relative "../errors"
 require_relative "../configurable"
 require_relative "../logging"
+require_relative "../plugin_base"
 
 module Kitchen
   module Verifier
     # Base class for a verifier.
     #
     # @author Fletcher Nichol <fnichol@nichol.ca>
-    class Base
+    class Base < Kitchen::Plugin::Base
       include Configurable
       include Logging
 

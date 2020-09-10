@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -18,7 +17,7 @@
 
 require_relative "../command"
 
-require "benchmark"
+require "benchmark" unless defined?(Benchmark)
 
 module Kitchen
   module Command

@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -17,7 +16,7 @@
 # limitations under the License.
 
 require_relative "../command"
-require "json"
+require "json" unless defined?(JSON)
 
 module Kitchen
   module Command

@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -74,6 +73,27 @@ class SerialDummyDriver < Kitchen::Driver::Dummy
 
   def destroy(state)
     track_locked(:destroy)
+    super
+  end
+end
+
+class SerialDummyVerifier < Kitchen::Verifier::Dummy
+  no_parallel_for :verify
+
+  attr_reader :action_in_mutex
+
+  def initialize(config = {})
+    super(config)
+    @action_in_mutex = {}
+  end
+
+  def track_locked(action)
+    @action_in_mutex ||= {}
+    @action_in_mutex[action] = Kitchen::Instance.mutexes[self.class].locked?
+  end
+
+  def call(state)
+    track_locked(:verify)
     super
   end
 end
@@ -1049,13 +1069,16 @@ describe Kitchen::Instance do
       end
     end
 
-    describe "on drivers with serial actions" do
+    describe "on plugins with serial actions" do
       let(:driver) { SerialDummyDriver.new({}) }
+      let(:verifier) { SerialDummyVerifier.new({}) }
 
       it "runs in a synchronized block for serial actions" do
-        instance.test
+        # require "byebug"; byebug
 
+        instance.test
         driver.action_in_mutex[:create].must_equal true
+        verifier.action_in_mutex[:verify].must_equal true
         driver.action_in_mutex[:destroy].must_equal true
       end
     end

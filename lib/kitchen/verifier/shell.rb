@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: SAWANOBORI Yukihiko (<sawanoboriyu@higanworks.com>)
 #
@@ -24,7 +23,7 @@ module Kitchen
     #
     # @author SAWANOBORI Yukihiko (<sawanoboriyu@higanworks.com>)
     class Shell < Kitchen::Verifier::Base
-      require "mixlib/shellout"
+      require "mixlib/shellout" unless defined?(Mixlib::ShellOut)
 
       kitchen_verifier_api_version 1
 

@@ -1,12 +1,12 @@
 ---
-title: Provisioners
+title: About Provisioners
 menu:
   docs:
     parent: provisioners
     weight: 1
 ---
 
-A Test-Kitchen *provisioner* takes care of configuring the compute instance provided by the *driver*. This is most commonly a configuration management framework like Chef or the Shell provisioner, both of which are included in test-kitchen by default.
+A Test Kitchen *provisioner* takes care of configuring the compute instance provided by the *driver*. This is most commonly a configuration management framework like Chef Infra or the Shell provisioner, both of which are included in test-kitchen by default.
 
 There are common settings that all provisioners inherit and can override. These are typically set in the context of a specific provisioner but are provided here for reference.
 
@@ -32,5 +32,6 @@ provisioner:
 Community provisioners:
 
 * [kitchen-ansible](https://github.com/neillturner/kitchen-ansible)
-* [kitchen-puppet](https://github.com/neillturner/kitchen-puppet)
 * [kitchen-dsc](https://github.com/test-kitchen/kitchen-dsc)
+* [kitchen-puppet](https://github.com/neillturner/kitchen-puppet)
+* [kitchen-salt](https://github.com/saltstack/kitchen-salt)

@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -17,9 +16,9 @@
 # limitations under the License.
 
 require "logger"
-require "net/ssh"
+require "net/ssh" unless defined?(Net::SSH)
 require "net/scp"
-require "socket"
+require "socket" unless defined?(Socket)
 
 require_relative "errors"
 require_relative "login_command"

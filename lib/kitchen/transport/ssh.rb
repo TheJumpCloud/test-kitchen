@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -18,13 +17,13 @@
 
 require_relative "../../kitchen"
 
-require "fileutils"
-require "net/ssh"
+require "fileutils" unless defined?(FileUtils)
+require "net/ssh" unless defined?(Net::SSH)
 require "net/ssh/gateway"
 require "net/ssh/proxy/http"
 require "net/scp"
-require "timeout"
-require "benchmark"
+require "timeout" unless defined?(Timeout)
+require "benchmark" unless defined?(Benchmark)
 
 module Kitchen
   module Transport

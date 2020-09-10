@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Noah Kantrowitz
 #
@@ -44,7 +43,7 @@ describe Kitchen::Provisioner::Chef::Policyfile do
     $VERBOSE = verbose
   end
 
-  # rubocop:disable Metrics/LineLength
+  # rubocop:disable Layout/LineLength
   describe "#resolve" do
     subject { described_object.resolve }
 
@@ -136,5 +135,5 @@ describe Kitchen::Provisioner::Chef::Policyfile do
       end
     end
   end
-  # rubocop:enable Metrics/LineLength
+  # rubocop:enable Layout/LineLength
 end

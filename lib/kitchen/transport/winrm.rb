@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Salim Afiune (<salim@afiunemaya.com.mx>)
 # Author:: Matt Wrock (<matt@mattwrock.com>)
@@ -18,10 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require "rbconfig"
-require "uri"
+require "rbconfig" unless defined?(RbConfig)
+require "uri" unless defined?(URI)
 require_relative "../../kitchen"
-require "winrm"
+require "winrm" unless defined?(WinRM::Connection)
 
 module Kitchen
   module Transport

@@ -1,5 +1,45 @@
 # Test Kitchen Change Log
 
+## [2.7.0](https://github.com/test-kitchen/test-kitchen/tree/v2.7.0) (2020-09-08)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.6.0...v2.7.0)
+
+- Allow all plugins to toggle concurrency
+- Optimize our requires
+
+## [2.6.0](https://github.com/test-kitchen/test-kitchen/tree/v2.6.0) (2020-08-13)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.5.4...v2.6.0)
+
+- Remove support for EOL Ruby 2.3
+- Relax dependency on license-acceptance to allow for 2.x
+
+## [2.5.4](https://github.com/test-kitchen/test-kitchen/tree/v2.5.4) (2020-07-29)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.5.3...v2.5.4)
+
+- Revert root_path changes that caused failures installing Chef Infra Client on Windows
+
+## [2.5.3](https://github.com/test-kitchen/test-kitchen/tree/v2.5.3) (2020-07-10)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.5.2...v2.5.3)
+
+- Respect root_path when product_name is specified [#1662](https://github.com/test-kitchen/test-kitchen/pull/1662)([clintoncwolfe](https://github.com/clintoncwolfe))
+
+## [2.5.2](https://github.com/test-kitchen/test-kitchen/tree/v2.5.2) (2020-06-11)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.5.1...v2.5.2)
+
+- Update thor requirement from ~> 0.19 to >= 0.19, < 2.0 [#1608](https://github.com/test-kitchen/test-kitchen/pull/1608)([dependabot-preview](https://github.com/dependabot-preview))
+
+## [2.5.1](https://github.com/test-kitchen/test-kitchen/tree/v2.5.1) (2020-05-16)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.5.0...v2.5.1)
+
+- Pin the Aruba dev dep to prevent test failures [#1646](https://github.com/test-kitchen/test-kitchen/pull/1646)([Xorima](https://github.com/Xorima))
+- Update install scripts messaging from Chef -> Chef Infra Client [#1644](https://github.com/test-kitchen/test-kitchen/pull/1644)([tas50](https://github.com/tas50))
+
+## [2.5.0](https://github.com/test-kitchen/test-kitchen/tree/v2.5.0) (2020-05-06)
+[Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.4.0...v2.5.0)
+
+- Allow copying Ohai plugins from the /ohai cookbook directory into the instance [#1634](https://github.com/test-kitchen/test-kitchen/pull/1634)([SAPDanJoe](https://github.com/SAPDanJoe))
+- Fix failures using the PowerShell provisioner [#1639](https://github.com/test-kitchen/test-kitchen/pull/1639)([alanghartJC](https://github.com/alanghartJC))
+- Update the net-ssh and net-scp deps to allow the latest versions to add support for sha2-{256,512}-etm@openssh.com MAC algorithms and to allow spaces / comment lines in the known_hosts file.
+
 ## [2.4.0](https://github.com/test-kitchen/test-kitchen/tree/v2.4.0) (2020-03-04)
 [Full Changelog](https://github.com/test-kitchen/test-kitchen/compare/v2.3.4...v2.4.0)
 
@@ -1064,7 +1104,7 @@
 - Don't reset locale in Kitchen::Driver::Base run\_command\(\) [\#485](https://github.com/test-kitchen/test-kitchen/issues/485)
 - Intermittent 'kitchen test' failures [\#449](https://github.com/test-kitchen/test-kitchen/issues/449)
 - shell-provisioner: lots of trouble with a noexec /tmp, failing workaround. [\#444](https://github.com/test-kitchen/test-kitchen/issues/444)
-- Support Chef-DK [\#443](https://github.com/test-kitchen/test-kitchen/issues/443)
+- Support ChefDK [\#443](https://github.com/test-kitchen/test-kitchen/issues/443)
 - Message: Failed to complete \#converge action: \[Permission denied [\#441](https://github.com/test-kitchen/test-kitchen/issues/441)
 - Idea: enable chef-zero to run on another server than the converged node. [\#437](https://github.com/test-kitchen/test-kitchen/issues/437)
 - Test Artifact Fetch Feature [\#434](https://github.com/test-kitchen/test-kitchen/issues/434)

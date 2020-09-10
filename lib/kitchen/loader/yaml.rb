@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 #
 # Author:: Fletcher Nichol (<fnichol@nichol.ca>)
 #
@@ -16,9 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require "erb"
+require "erb" unless defined?(Erb)
 require_relative "../../vendor/hash_recursive_merge"
-require "yaml"
+require "yaml" unless defined?(YAML)
 
 module Kitchen
   module Loader
